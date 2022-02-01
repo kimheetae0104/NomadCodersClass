@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    //비어있는 div 는 ReactDOM이 React element들을 가져다놓을 곳
+    <div id-"root></div>
+  </body>
+    //ReactJs가 element를 생성하고 eventlistener를 더하는 것을 도와주기 위해서 필요함 
+  <script src="https://unpkg.com/react@17.0.2/umd/react.prodution">
+    </script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.prodution"></script>
+  <script>
+    const root = document.getElementById("root");
+    const h3 = React.createElement(
+      "h3",
+      {
+        id:"title",
+        onMouseEnter:()=>console.log("mouse enter"),
+      },
+      "Hello I'm a title"
+    );
+    const btn = React.createElement(
+      "button",
+      {
+        onClick: () => console.log("im clicked"),
+        style: {
+          backgroundColor: "tomato",
+        },
+      },
+      "Click me"
+    );
+    //ReactDOM은 container element를 root div 안에 render 하게 됨 render는 React element들을 root div안에서 보여주라는 뜻 
+    const container = React.createElement("div", null, [h3,btn])ReactDOM.render(container,root);
+  </script>
+  
+  
+</html>
